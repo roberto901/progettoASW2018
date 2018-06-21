@@ -11,4 +11,4 @@ Servizio per la generazione di frasi casuali.
 
 * **word-service** 
 
-Il servizio per la generazione delle parole casuali.
+Servizio per la generazione delle parole casuali.
