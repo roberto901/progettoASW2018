@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: subject
+spec:
+  selector:
+      matchLabels:
+        app: subject
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: subject
+    spec:
+      containers:
+        - name: word-service
+          image: word-service-img
+          imagePullPolicy: Never
+          args: ["-jar", "-Dspring.profiles.active=subject", "word.jar"]
+          ports:
+            - containerPort: 8080

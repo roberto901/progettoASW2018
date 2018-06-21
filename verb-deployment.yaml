@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: verb
+spec:
+  selector:
+      matchLabels:
+        app: verb
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: verb
+    spec:
+      containers:
+        - name: word-service
+          image: word-service-img
+          imagePullPolicy: Never
+          args: ["-jar", "-Dspring.profiles.active=verb", "word.jar"]
+          ports:
+            - containerPort: 8080

@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: sentence-service
+spec:
+  selector:
+    app: sentence
+  ports:
+  - protocol: TCP
+    targetPort: 8080
+    port: 8080
+  type: NodePort
