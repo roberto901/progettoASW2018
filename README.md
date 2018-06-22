@@ -21,6 +21,6 @@ Inoltre abbiamo altri tre servizi per la generazione di subject, verb e object c
 
 ### Una versione di Kubernetes
 
-Per quanto riguarda l'installazione di Kubernetes, la versione utilizzata nel progetto è [Minikube] (https://kubernetes.io/docs/tasks/tools/install-minikube/), un tool in grado di lanciare un single-node Kubernetes cluster localmente, o all'interno di un ambiente virtuale. 
+Per quanto riguarda l'installazione di Kubernetes, la versione utilizzata nel progetto è [Minikube] (https://kubernetes.io/docs/tasks/tools/install-minikube/) , un tool in grado di lanciare un single-node Kubernetes cluster localmente, o all'interno di un ambiente virtuale. 
 
 Prima di installare Minikube, è necessario installare **Kubectl**, un tool da linea di comando che ci permetterà di rilasciare e gestire la nostra applicazione all'interno di Kubernetes. 
