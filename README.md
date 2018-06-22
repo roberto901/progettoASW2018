@@ -23,6 +23,13 @@ Inoltre abbiamo altri tre servizi per la generazione di subject, verb e object c
 ## Installazione
 Per quanto riguarda l'installazione di Kubernetes, la versione utilizzata nel progetto è **Minikube**, un tool in grado di lanciare un single-node Kubernetes cluster localmente, o all'interno di un ambiente virtuale. 
 
-Prima di installare Minikube, è necessario installare **Kubectl**, un tool da linea di comando che ci permetterà di rilasciare e gestire la nostra applicazione all'interno di Kubernetes. 
+Prima di installare Minikube, è necessario installare **Kubectl**, un tool da linea di comando che ci permetterà di rilasciare e gestire la nostra applicazione all'interno di Kubernetes. Per effettuare l'installazione di kubectl su Ubuntu o Debian si eseguono i seguenti comandi:
+
+sudo apt-get update && sudo apt-get install -y apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo touch /etc/apt/sources.list.d/kubernetes.list 
+echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubectl
 
 
