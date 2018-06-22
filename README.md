@@ -35,5 +35,9 @@ sudo apt-get update
 sudo apt-get install -y kubectl
 ```
 
+Se si vuole installare kubectl su macOS, è possibile usare il package manager [Homebrew] (https://brew.sh/index_it):
+```
+brew install kubectl
+```
 
 
