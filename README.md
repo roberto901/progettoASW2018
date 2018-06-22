@@ -5,10 +5,8 @@ Il progetto è stato realizzato per testare il rilascio di un'applicazione a pi�
 ### Applicazione **Sentence**
 L'applicazione è composta da più servizi:
 
-* **sentence-service** 
+* **sentence-service**: Servizio per la generazione delle frasi.
 
-Servizio per la generazione di frasi casuali.
+* **word-service**: Servizio per la generazione delle parole casuali.
 
-* **word-service** 
-
-Servizio per la generazione delle parole casuali.
+Inoltre abbiamo altri tre servizi per la generazione di subject, verb e object che vengono chiamati tramite chiamate feign dal word service che produrrà, in modo casuale, le varie parti della frase.
