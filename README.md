@@ -46,7 +46,7 @@ Dopo aver fatto questi passi, possiamo verificare che kubectl sta comunicando co
 kubectl cluster-info
 ```
 
-### Applicazione **Sentence**
+## Applicazione **Sentence**
 L'applicazione è composta da più servizi:
 
 * **sentence-service**: Servizio per la generazione delle frasi.
