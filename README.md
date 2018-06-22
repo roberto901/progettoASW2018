@@ -39,5 +39,5 @@ Se si vuole installare kubectl su macOS, è possibile usare il package manager [
 ```
 brew install kubectl
 ```
-
+[SemVer](http://semver.org/)
 
