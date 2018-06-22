@@ -103,3 +103,11 @@ Possiamo verificare che la nostra applicazione è stata effettivamente scalata t
 kubectl get deployments
 ```
 L'attributo **AVAILABLE** specifica il numero di copie presenti all'interno del cluster per ogni singolo servizio.
+
+
+### Conclusioni
+Sono stati inoltre forniti due ulteriori script, per lo scale down e per l'eliminazione dei service:
+```
+scaleDOWN.sh
+deleteALL.sh
+```
