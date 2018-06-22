@@ -51,4 +51,9 @@ minikube start
 minikube config set vm-driver virtualbox
 kubectl config use-context minikube
 ```
+Dopo aver fatto questi passi, possiamo verificare che kubectl sta comunicando correttamente con il cluster:
+```
+kubectl cluster-info
+```
+
 
