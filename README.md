@@ -13,3 +13,9 @@ Inoltre abbiamo altri tre servizi per la generazione di subject, verb e object c
 
 
 ## Software da installare sul proprio PC
+
+* [VirtualBox](https://www.virtualbox.org/)
+* [Docker](https://www.docker.com/)
+
+
+## Kubernetes
