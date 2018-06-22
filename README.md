@@ -11,11 +11,16 @@ L'applicazione è composta da più servizi:
 
 Inoltre abbiamo altri tre servizi per la generazione di subject, verb e object che vengono chiamati tramite chiamate feign dal word service che produrrà, in modo casuale, le varie parti della frase.
 
+## Prerequisiti
 
-## Software da installare sul proprio PC
+### Software da installare sul proprio PC
 
 * [VirtualBox](https://www.virtualbox.org/)
 * [Docker](https://www.docker.com/)
 
 
-## Kubernetes
+### Una versione di Kubernetes
+
+Per quanto riguarda l'installazione di Kubernetes, la versione utilizzata nel progetto è [Minikube] (https://kubernetes.io/docs/tasks/tools/install-minikube/), un tool in grado di lanciare un single-node Kubernetes cluster localmente, o all'interno di un ambiente virtuale. 
+
+Prima di installare Minikube, è necessario installare **Kubectl**, un tool da linea di comando che ci permetterà di rilasciare e gestire la nostra applicazione all'interno di Kubernetes. 
