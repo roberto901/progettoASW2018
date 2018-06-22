@@ -21,10 +21,9 @@ Inoltre abbiamo altri tre servizi per la generazione di subject, verb e object c
 * Kubernetes
 
 ## Installazione
-Per quanto riguarda l'installazione di Kubernetes, la versione utilizzata nel progetto è **Minikube**, un tool in grado di lanciare un single-node Kubernetes cluster localmente, o all'interno di un ambiente virtuale. 
+Per quanto riguarda l'installazione di Kubernetes, la versione utilizzata nel progetto è **minikube**, un tool in grado di lanciare un single-node Kubernetes cluster localmente, o all'interno di un ambiente virtuale. Prima di installare Minikube, è necessario installare **kubectl**, un tool da linea di comando che ci permetterà di rilasciare e gestire la nostra applicazione all'interno di Kubernetes. 
 
-Prima di installare Minikube, è necessario installare **Kubectl**, un tool da linea di comando che ci permetterà di rilasciare e gestire la nostra applicazione all'interno di Kubernetes. 
-
+### Kubectl 
 Per effettuare l'installazione di kubectl su **Ubuntu** o **Debian** si eseguono i seguenti comandi:
 ```
 sudo apt-get update && sudo apt-get install -y apt-transport-https
@@ -38,5 +37,18 @@ sudo apt-get install -y kubectl
 Se si vuole installare kubectl su macOS, è possibile usare il package manager [Homebrew](https://brew.sh/index_it) :
 ```
 brew install kubectl
+```
+
+### Minikube
+Per effettuare l'installazione di minikube:
+```
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.15.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+```
+
+A questo punto possiamo lanciare il nostro cluster, impostando VirtualBox come hypervisor e configuriamo kubectl per poter parlare con il cluster minikube:
+```
+minikube start
+minikube config set vm-driver virtualbox
+kubectl config use-context minikube
 ```
 
