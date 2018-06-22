@@ -55,3 +55,16 @@ L'applicazione scelta per il progetto è Sentence, usata per la generazione di f
 
 Inoltre abbiamo altri tre servizi per la generazione di subject, verb e object che vengono invocati tramite chiamate feign dal word service che produrrà, in modo casuale, le varie parti della frase.
 
+
+### Creazione immagini Docker
+Il primo passo da effettuare il deploy dell'applicazione è la creazione delle immagini Docker a partire dalla build dell'applicazione:
+
+* Lanciamo lo script per la build dell'applicazione all'interno della directory
+```
+./buildGradle.sh
+```
+
+* Lo script per la creazione delle immagini Docker
+```
+./buildDocker.sh
+```
