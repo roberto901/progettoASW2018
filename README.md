@@ -1,6 +1,6 @@
 # Progetto ASW Luglio2018
 
-Il progetto è stato realizzato per testare il rilascio di un'applicazione a microservizi, contenitorizzata, tramite l'utilizzo dell'orchestratore di contenitori Kubernetes. L'applicazione scelta per il progetto è Sentence, usata per la generazione di frasi casuali.
+Il progetto è stato realizzato per testare il rilascio di un'applicazione a microservizi, contenitorizzata, tramite l'utilizzo dell'orchestratore di contenitori Kubernetes.
 
 ## Prerequisiti
 
@@ -47,7 +47,7 @@ kubectl cluster-info
 ```
 
 ## Applicazione **Sentence**
-L'applicazione è composta da più servizi:
+L'applicazione scelta per il progetto è Sentence, usata per la generazione di frasi casuali. L'applicazione è composta da più servizi:
 
 * **sentence-service**: Servizio per la generazione delle frasi.
 
