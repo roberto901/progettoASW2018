@@ -56,15 +56,24 @@ L'applicazione scelta per il progetto è Sentence, usata per la generazione di f
 Inoltre abbiamo altri tre servizi per la generazione di subject, verb e object che vengono invocati tramite chiamate feign dal word service che produrrà, in modo casuale, le varie parti della frase.
 
 
-### Creazione immagini Docker
-Il primo passo da effettuare il deploy dell'applicazione è la creazione delle immagini Docker a partire dalla build dell'applicazione:
+### Creazione delle immagini Docker
+Il primo passo per effettuare il deploy dell'applicazione è la creazione delle immagini Docker a partire dalla build dell'applicazione:
 
-* Lanciamo lo script per la build dell'applicazione all'interno della directory
+* Lanciamo lo script per la build dell'applicazione all'interno della directory:
 ```
 ./buildGradle.sh
 ```
 
-* Lo script per la creazione delle immagini Docker
+* Lo script per la creazione delle immagini Docker:
 ```
 ./buildDocker.sh
 ```
+
+Possiamo verificare che le immagini sono state create correttamente con il comando:
+```
+docker images
+```
+
+
+### Creazione dei Service e deploy dell'applicazione
+In Kubernetes un **pod** è la più piccola unità di deploy che è possibile creare e gestire. Un pod è costituito da uno o più contenitori distribuiti su un singolo nodo. Ogni contenitore all'interno di un pod, condivide indirizzo IP, IPC, nome host ed altre risorse. I pod possono essere distrutti e le risorse ad essi assegnati, cambiano dinamicamente. Per questo in Kubernetes vengono definiti i **Service** 
