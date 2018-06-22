@@ -87,13 +87,13 @@ Se tutto è andato a buon fine, dovremmo essere in grado di visualizzare nella b
 kubectl get services
 ```
 
-## Esecuzione 
+### Esecuzione 
 Ora che abbiamo effettuato il deploy della'applicazione, possiamo eseguirla con il comando:
 ```
 minikube service sentence-service
 ```
 
-## Scalabilità
+### Scalabilità
 Per garantire la scalabilità, ma anche la disponibilità, della nostra applicazione, Kubernetes fornisce il **ReplicaSet**. Il ReplicaSet consente di creare diverse repliche di un singolo Pod e assicura che, in caso di fallimento, il numero delle repliche rimanga lo stesso. Usiamo lo script per replicare la nostra applicazione:
 ```
 ./scaleUP.sh
@@ -106,7 +106,7 @@ L'attributo **AVAILABLE** specifica il numero di copie presenti all'interno del 
 
 
 
-### Conclusioni
+## Conclusioni
 Sono stati inoltre forniti due ulteriori script, per lo scale down e per l'eliminazione dei service:
 ```
 scaleDOWN.sh
