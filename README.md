@@ -19,7 +19,7 @@ Inoltre abbiamo altri tre servizi per la generazione di subject, verb e object c
 * [Docker](https://www.docker.com/)
 
 
-### Una versione di Kubernetes
+### Kubernetes
 
 Per quanto riguarda l'installazione di Kubernetes, la versione utilizzata nel progetto è **Minikube**, un tool in grado di lanciare un single-node Kubernetes cluster localmente, o all'interno di un ambiente virtuale. 
 
