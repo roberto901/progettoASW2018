@@ -11,7 +11,7 @@ Il progetto è stato realizzato per testare il rilascio di un'applicazione a mic
 * **Kubernetes**
 
 ## Installazione
-Per quanto riguarda l'installazione di Kubernetes, la versione utilizzata nel progetto è **minikube**, un tool in grado di lanciare un single-node Kubernetes cluster localmente, o all'interno di un ambiente virtuale. Prima di installare Minikube, è necessario installare **kubectl**, un tool da linea di comando che ci permetterà di rilasciare e gestire la nostra applicazione all'interno di Kubernetes. 
+Per quanto riguarda l'installazione di Kubernetes, la versione utilizzata nel progetto è **minikube**, un tool in grado di lanciare un single-node Kubernetes cluster localmente, o all'interno di un ambiente virtuale. Prima di installare Minikube, è necessario installare **kubectl**, un tool da linea di comando che ci permetterà di rilasciare e gestire la nostra applicazione all'interno del cluster di minikube. 
 
 ### Kubectl 
 Per effettuare l'installazione di kubectl su **Ubuntu** o **Debian** si eseguono i seguenti comandi:
