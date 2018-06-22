@@ -75,5 +75,20 @@ docker images
 ```
 
 
-### Creazione dei Service e deploy dell'applicazione
-In Kubernetes un **pod** è la più piccola unità di deploy che è possibile creare e gestire. Un pod è costituito da uno o più contenitori distribuiti su un singolo nodo. Ogni contenitore all'interno di un pod, condivide indirizzo IP, IPC, nome host ed altre risorse. I pod possono essere distrutti e le risorse ad essi assegnati, cambiano dinamicamente. Per questo in Kubernetes vengono definiti i **Service** 
+### Creazione dei Service e dei Deployment dell'applicazione
+In Kubernetes un **Pod** è la più piccola unità di deploy che è possibile creare e gestire. Un pod è costituito da uno o più contenitori distribuiti su un singolo nodo. I Pod possono essere distrutti e le risorse assegnate ad essi (come indirizzo IP), cambiano dinamicamente. Per questo in Kubernetes vengono definiti i **Service** un'astrazione logica di un insieme di Pod e una politica di accesso ad essi. Inoltre abbiamo bisogno, per ogni Service, di un **Deployment** per gestire la scalabilità dei Pod.
+
+Per la creazione dei Service e dei relativi Deployment usiamo lo script:
+```
+./createServiceDeploy.sh
+```
+Se tutto è andato a buon fine, dovremmo essere in grado di visualizzare nella bash i servizi appena creati usando il comando:
+```
+kubectl get services
+```
+
+## Esecuzione 
+Ora che abbiamo effettuato il deploy della'applicazione, possiamo eseguirla con il comando:
+```
+minikube service sentence-service
+```
