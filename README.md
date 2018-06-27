@@ -61,7 +61,7 @@ Più precisamente per eseguire questa applicazione in Kubernetes, i servizi da u
 
 
 ### Creazione delle immagini Docker
-Il primo passo per effettuare il deploy dell'applicazione è la creazione delle immagini Docker a partire dalla build dell'applicazione:
+Il primo passo per effettuare il deploy dell'applicazione è la creazione delle immagini Docker:
 
 * Lanciamo lo script per compilare e assemblare l'applicazione all'interno della directory del progetto:
 ```
