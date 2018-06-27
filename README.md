@@ -68,7 +68,7 @@ Il primo passo per effettuare il deploy dell'applicazione è la creazione delle 
 ./buildGradle.sh
 ```
 
-* Lo script per la creazione delle immagini Docker:
+* Lo script per la creazione delle immagini Docker (è necessario avere Docker in esecuzione):
 ```
 ./buildDocker.sh
 ```
