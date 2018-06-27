@@ -11,7 +11,7 @@ Il progetto è stato realizzato per testare il rilascio di un'applicazione a mic
 * **Kubernetes**
 
 ## Installazione
-Per quanto riguarda l'installazione di Kubernetes, la versione utilizzata nel progetto è **minikube**, un tool in grado di lanciare un single-node Kubernetes cluster localmente, o all'interno di un ambiente virtuale. Prima di installare Minikube, è necessario installare **kubectl**, un tool da linea di comando che ci permetterà di rilasciare e gestire la nostra applicazione all'interno del cluster di minikube. 
+Per quanto riguarda l'installazione di Kubernetes, la versione utilizzata nel progetto è **minikube**, un tool in grado di lanciare un single-node Kubernetes, all'interno di un ambiente virtuale. Prima di installare Minikube, è necessario installare **kubectl**, un tool da linea di comando che ci permetterà di rilasciare e gestire la nostra applicazione all'interno del cluster di minikube. 
 
 ### Kubectl 
 Per effettuare l'installazione di kubectl su **Ubuntu** o **Debian** si eseguono i seguenti comandi:
@@ -47,11 +47,17 @@ kubectl cluster-info
 ```
 
 ## Applicazione **Sentence**
-L'applicazione scelta per il progetto è Sentence, usata per la generazione di frasi casuali. L'applicazione è composta da più servizi:
+L'applicazione scelta per il progetto è Sentence, basata su Feign, usata per la generazione di frasi casuali. L'applicazione è formata da più servizi:
 
-* **sentence-service**: Servizio per la generazione delle frasi.
+* **sentence-service**: è un servizio per la generazione delle frasi, che accede i servizi **word-service**.
 
-Inoltre abbiamo altri tre servizi per la generazione di subject, verb e object che vengono invocati tramite chiamate **Feign** dal word service che produrrà, in modo casuale, le varie parti della frase.
+* **word-service**: è un servizio per la generazione di parole casuali, utilizzato dal servizio sentence-service.
+
+Più precisamente per eseguire questa applicazione in Kubernetes, i servizi da usare in modo congiunto sono:
+
+* un'istanza di sentece-service.
+
+* tre istanze di word-service, una per ogni tipo di parola, ovvero **subject-service** (servizio per la generazione di soggetti casuali), **verb-service** (servizio per la generazione di verbi casuali), **object-service** (servizio per la generazione di oggetti casuali).
 
 
 ### Creazione delle immagini Docker
@@ -74,7 +80,7 @@ docker images
 
 
 ### Creazione dei Service e dei Deployment dell'applicazione
-In Kubernetes un **Pod** è la più piccola unità di deploy che è possibile creare e gestire. Un pod è costituito da uno o più contenitori distribuiti su un singolo nodo. I Pod possono essere distrutti e le risorse assegnate ad essi (come indirizzo IP), cambiano dinamicamente. Per questo in Kubernetes vengono definiti i **Service** un'astrazione logica di un insieme di Pod e una politica di accesso ad essi. Inoltre abbiamo bisogno, per ogni Service, di un **Deployment** per gestire la scalabilità dei Pod.
+In Kubernetes un **Pod** è la più piccola unità di deploy che è possibile creare e gestire. Un pod è costituito da uno o più contenitori strettamente correlati, su un singolo nodo. I Pod possono essere distrutti e le risorse assegnate ad essi (come indirizzo IP), cambiano dinamicamente. Per questo in Kubernetes vengono definiti i **Service**, un punto d’ingresso unico e stabile per un insieme logico di pod che forniscono uno stesso servizio. Inoltre abbiamo bisogno, per ogni Service, di un **Deployment** (risorsa di alto livello per la gestione del rilascio e dell’aggiornamento dell’applicazione), per gestire la scalabilità dei Pod.
 
 Per la creazione dei Service e dei relativi Deployment usiamo lo script:
 ```
@@ -92,7 +98,7 @@ minikube service sentence-service
 ```
 
 ### Scalabilità
-Per garantire la scalabilità, ma anche la disponibilità, della nostra applicazione, Kubernetes fornisce il **ReplicaSet**. Il ReplicaSet consente di creare diverse repliche di un singolo Pod e assicura che, in caso di fallimento, il numero delle repliche rimanga lo stesso. Usiamo lo script per replicare la nostra applicazione:
+Per garantire la scalabilità, ma anche la disponibilità, della nostra applicazione, Kubernetes fornisce il **ReplicaSet**. Il ReplicaSet consente di gestire automaticamente l’esecuzione di una o più repliche di un Pod e assicura che, in caso di fallimento, il numero delle repliche rimanga lo stesso.
 ```
 ./scaleUP.sh
 ```
