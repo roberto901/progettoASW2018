@@ -63,7 +63,7 @@ Più precisamente per eseguire questa applicazione in Kubernetes, i servizi da u
 ### Creazione delle immagini Docker
 Il primo passo per effettuare il deploy dell'applicazione è la creazione delle immagini Docker a partire dalla build dell'applicazione:
 
-* Lanciamo lo script per la build dell'applicazione all'interno della directory del progetto:
+* Lanciamo lo script per compilare e assemblare l'applicazione all'interno della directory del progetto:
 ```
 ./buildGradle.sh
 ```
