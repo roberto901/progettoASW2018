@@ -111,7 +111,7 @@ L'attributo **AVAILABLE** specifica il numero di copie presenti all'interno del 
 
 
 ## Conclusioni
-Sono stati inoltre forniti due ulteriori script, per lo scale down e per l'eliminazione dei service:
+Sono stati inoltre forniti due ulteriori script, per lo scale down e per l'eliminazione dei servizi:
 ```
 scaleDOWN.sh
 deleteALL.sh
