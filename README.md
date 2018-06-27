@@ -11,7 +11,7 @@ Il progetto è stato realizzato per effettuare il rilascio di un'applicazione a 
 * **Kubernetes**
 
 ## Installazione
-Per quanto riguarda l'installazione di Kubernetes, la versione utilizzata nel progetto è **minikube**, un tool in grado di lanciare un single-node Kubernetes, all'interno di una macchina virtuale VM. Prima di installare Minikube, è necessario installare **kubectl**, un tool da linea di comando che ci permetterà di rilasciare e gestire la nostra applicazione all'interno del cluster di minikube. 
+Per quanto riguarda l'installazione di Kubernetes, la versione utilizzata nel progetto è **minikube**, un tool in grado di lanciare un single-node Kubernetes cluster, all'interno di una macchina virtuale VM. Prima di installare Minikube, è necessario installare **kubectl**, un tool da linea di comando che ci permetterà di rilasciare e gestire la nostra applicazione all'interno del cluster di minikube. 
 
 ### Kubectl 
 Per effettuare l'installazione di kubectl su **Ubuntu** o **Debian** si eseguono i seguenti comandi:
@@ -80,7 +80,7 @@ docker images
 
 
 ### Creazione dei Service e dei Deployment dell'applicazione
-In Kubernetes un **Pod** è la più piccola unità di deploy che è possibile creare e gestire. Un pod è costituito da uno o più contenitori strettamente correlati, distribuiti su un singolo nodo. I Pod possono essere distrutti e le risorse assegnate ad essi (come indirizzo IP), cambiano dinamicamente. Per questo in Kubernetes vengono definiti i **Service**, un punto d’ingresso unico e stabile per un insieme logico di pod che forniscono uno stesso servizio. Inoltre abbiamo bisogno, per ogni Service, di un **Deployment** (risorsa di alto livello per la gestione del rilascio e dell’aggiornamento dell’applicazione), per gestire la scalabilità dei Pod.
+In Kubernetes un **Pod** è la più piccola unità di deploy che è possibile creare e gestire. Un pod è costituito da uno o più contenitori strettamente correlati, distribuiti su un singolo nodo. I Pod possono essere distrutti e le risorse assegnate ad essi (come indirizzo IP) cambiano dinamicamente. Per questo in Kubernetes vengono definiti i **Service**, un punto d’ingresso unico e stabile per un insieme logico di pod che forniscono uno stesso servizio. Inoltre abbiamo bisogno, per ogni Service, di un **Deployment** (risorsa di alto livello per la gestione del rilascio e dell’aggiornamento dell’applicazione), per gestire la scalabilità dei Pod.
 
 Per la creazione dei Service e dei relativi Deployment usiamo lo script:
 ```
